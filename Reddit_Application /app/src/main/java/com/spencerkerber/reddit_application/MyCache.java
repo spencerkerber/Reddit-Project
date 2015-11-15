@@ -22,7 +22,7 @@ public class MyCache {
 
     static private String cacheDirectory =
             "/Android/data/com.jdepths.alien/cache/";
-    
+
     static {
         if(Environment.getExternalStorageState()
                 .equals(Environment.MEDIA_MOUNTED)){
