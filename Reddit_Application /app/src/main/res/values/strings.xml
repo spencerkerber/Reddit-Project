@@ -18,6 +18,7 @@
     <string name="delete">Delete</string>
     <string name="action_new">New Todo</string>
     <string name="action_sync">Sync</string>
+    <string name="action_reddit">Reddit</string>
     <string name="action_logout">Log Out</string>
     <string name="action_login">Log In</string>
     <string name="login_title">Please log in or sign up to sync your todos to your account.</string>

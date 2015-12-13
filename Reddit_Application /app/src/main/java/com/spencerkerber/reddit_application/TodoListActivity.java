@@ -36,6 +36,7 @@ public class TodoListActivity extends Activity {
 
     private static final int LOGIN_ACTIVITY_CODE = 100;
     private static final int EDIT_ACTIVITY_CODE = 200;
+    private static final int REDDIT_ACTIVITY_CODE = 300;
 
     // Adapter for the Todos Parse Query
     private ParseQueryAdapter<Todo> todoListAdapter;
@@ -82,10 +83,12 @@ public class TodoListActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 Todo todo = todoListAdapter.getItem(position);
+
                 openEditView(todo);
             }
         });
     }
+
 
     @Override
     protected void onResume() {
@@ -153,6 +156,11 @@ public class TodoListActivity extends Activity {
                         EDIT_ACTIVITY_CODE);
             }
         }
+        if (item.getItemId() == R.id.action_reddit) {
+        Intent intent = new Intent (this, MainActivity.class);
+            this.startActivity(intent);
+            return true;
+        }
 
         if (item.getItemId() == R.id.action_sync) {
             syncTodosToParse();
@@ -178,6 +186,7 @@ public class TodoListActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+
     }
 
     @Override
@@ -317,7 +326,7 @@ public class TodoListActivity extends Activity {
         }
     }
 
-    private static class ViewHolder {
+    public static class ViewHolder {
         TextView todoTitle;
     }
 }

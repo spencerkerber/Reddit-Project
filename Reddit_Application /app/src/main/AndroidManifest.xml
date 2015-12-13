@@ -26,6 +26,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MainActivity"
+            android:label="Reddit">
+        </activity>
+        <activity
             android:name=".NewTodoActivity"
             android:label="@string/app_name" >
         </activity>

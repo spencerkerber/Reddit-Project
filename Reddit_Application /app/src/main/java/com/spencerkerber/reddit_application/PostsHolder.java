@@ -3,6 +3,7 @@ package com.spencerkerber.reddit_application;
 /**
  * Created by spencerkerber on 11/15/15.
  */
+
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -94,4 +95,5 @@ public class PostsHolder {
         generateURL();
         return fetchPosts();
     }
+    
 }
