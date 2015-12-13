@@ -3,12 +3,14 @@ package com.spencerkerber.reddit_application;
 /**
  * Created by spencerkerber on 11/15/15.
  */
+
 import android.os.Environment;
 import android.util.Log;
 
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.math.BigInteger;
@@ -79,5 +81,13 @@ public class MyCache {
             pw.print(data);
             pw.close();
         }catch(Exception e) { }
+    }
+
+    public static FileOutputStream getOutputStream(String url){
+        try{
+            String file=cacheDirectory+"/"+convertToCacheName(url);
+            File f=new File(file);
+            return new FileOutputStream(f);
+        }catch(Exception e){return null;}
     }
 }
