@@ -21,7 +21,8 @@ public class MainActivity extends FragmentActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.fragments_holder
-                        , PostsFragment.newInstance("List<Todo>"))
+                        //subreddit entered here
+                        , PostsFragment.newInstance("askreddit+funny"))
                 .commit();
     }
 }

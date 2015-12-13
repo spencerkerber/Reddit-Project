@@ -95,5 +95,5 @@ public class PostsHolder {
         generateURL();
         return fetchPosts();
     }
-    
+
 }
