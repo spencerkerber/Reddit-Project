@@ -10,10 +10,18 @@ import java.util.UUID;
 /**
  * Created by spencerkerber on 12/12/15.
  */
-@ParseClassName("User")
-public class User extends ParseObject{
+@ParseClassName("Todo")
+public class Todo extends ParseObject {
 
-    public ParseUser getAuthor(){
+    public String getTitle() {
+        return getString("title");
+    }
+
+    public void setTitle(String title) {
+        put("title", title);
+    }
+
+    public ParseUser getAuthor() {
         return getParseUser("author");
     }
 
@@ -21,12 +29,12 @@ public class User extends ParseObject{
         put("author", currentUser);
     }
 
-    public String getSub() {
-        return getString("sub");
+    public boolean isDraft() {
+        return getBoolean("isDraft");
     }
 
-    public void setSub(String sub) {
-        put("sub", sub);
+    public void setDraft(boolean isDraft) {
+        put("isDraft", isDraft);
     }
 
     public void setUuidString() {
@@ -38,7 +46,7 @@ public class User extends ParseObject{
         return getString("uuid");
     }
 
-    public static ParseQuery<User> getQuery() {
-        return ParseQuery.getQuery(User.class);
+    public static ParseQuery<Todo> getQuery() {
+        return ParseQuery.getQuery(Todo.class);
     }
 }
