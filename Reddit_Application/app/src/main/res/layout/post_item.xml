@@ -11,7 +11,7 @@
         android:layout_toLeftOf="@+id/post_score"
         android:layout_alignParentTop="true"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#340DC1"
+        android:textColor="#167EEE"
         />
 
     <TextView

@@ -15,7 +15,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="Redditron"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.Holo.Light" >
+        android:theme="@android:style/Theme.Holo" >
         <activity
             android:name=".TodoListActivity"
             android:label="Redditron">
