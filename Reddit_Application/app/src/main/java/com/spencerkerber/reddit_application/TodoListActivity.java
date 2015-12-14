@@ -143,6 +143,7 @@ public class TodoListActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.todo_list, menu);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         return true;
     }
 
