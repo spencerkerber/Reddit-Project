@@ -23,7 +23,7 @@ import java.util.Date;
 public class MyCache {
 
     static private String cacheDirectory =
-            "/Android/data/com.jdepths.alien/cache/";
+            "/Android/data/com.spencerkerber.reddit_application/cache/";
 
     static {
         if(Environment.getExternalStorageState()
