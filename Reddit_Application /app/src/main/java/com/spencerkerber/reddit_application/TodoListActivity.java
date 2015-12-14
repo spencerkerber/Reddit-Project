@@ -267,6 +267,7 @@ public class TodoListActivity extends Activity {
 
     }
 
+    public String subList;
     private void loadFromParse() {
         ParseQuery<Todo> query = Todo.getQuery();
         query.whereEqualTo("author", ParseUser.getCurrentUser());
@@ -292,9 +293,14 @@ public class TodoListActivity extends Activity {
                             "loadFromParse: Error finding pinned todos: "
                                     + e.getMessage());
                 }
+
+
             }
         });
+
+
     }
+
 
     private class ToDoListAdapter extends ParseQueryAdapter<Todo> {
 
@@ -329,4 +335,6 @@ public class TodoListActivity extends Activity {
     public static class ViewHolder {
         TextView todoTitle;
     }
+
+
 }

@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingBottom="@dimen/com_parse_ui_xlarge_vertical_spacing"
-        android:text="@string/login_title" />
+        android:text="Login to add subreddits" />
 
     <include layout="@layout/com_parse_ui_parse_login_form" />
 

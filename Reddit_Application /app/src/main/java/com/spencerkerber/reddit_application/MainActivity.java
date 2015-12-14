@@ -3,6 +3,8 @@ package com.spencerkerber.reddit_application;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
+import com.parse.ParseQuery;
+
 /**
  * As of now, all this activity does is create and
  * render a fragment.
@@ -17,12 +19,14 @@ public class MainActivity extends FragmentActivity {
 
     }
 
+    ParseQuery<Todo> query = Todo.getQuery();
+
     void addFragment(){
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.fragments_holder
                         //subreddit entered here
-                        , PostsFragment.newInstance("askreddit+funny"))
+                        , PostsFragment.newInstance("funny"))
                 .commit();
     }
 }

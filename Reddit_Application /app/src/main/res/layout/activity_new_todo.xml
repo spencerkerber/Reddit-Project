@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="18sp"
-        android:text="@string/todo_prompt" />
+        android:text="Enter Subreddit Name" />
 
     <EditText
         android:id="@+id/todo_text"
@@ -23,7 +23,7 @@
         android:id="@+id/saveButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/save" />
+        android:text="Add" />
 
     <Button
         android:id="@+id/deleteButton"
