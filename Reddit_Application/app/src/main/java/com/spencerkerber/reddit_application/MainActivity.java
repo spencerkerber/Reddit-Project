@@ -2,6 +2,7 @@ package com.spencerkerber.reddit_application;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -28,17 +29,16 @@ public class MainActivity extends FragmentActivity implements PostsFragment.OnPo
 
     void addFragment(){
         String loadSubreddit = "funny";
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.fragments_holder
+        FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragments_holder
                         //subreddit entered here
-                        , PostsFragment.newInstance(loadSubreddit))
-                .commit();
+                        , PostsFragment.newInstance(loadSubreddit));
+                fragmentTransaction.commit();
     }
 
     @Override
     public void PostClicked(int postPosition, String url) {
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         PostView postView = PostView.NewInstance(url);
@@ -63,4 +63,5 @@ public class MainActivity extends FragmentActivity implements PostsFragment.OnPo
 
         return super.onOptionsItemSelected(item);
     }
+
 }
