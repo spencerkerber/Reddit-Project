@@ -28,6 +28,7 @@ public class NewTodoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_todo);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Fetch the todoId from the Extra data
         if (getIntent().hasExtra("ID")) {
