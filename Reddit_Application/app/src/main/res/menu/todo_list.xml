@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/action_reddit"
         android:icon="@drawable/ic_action_reddit"
-
         android:title="@string/action_reddit">
     </item>
 
     <item
         android:id="@+id/action_new"
         android:icon="@drawable/ic_action_new"
-
         android:title="Add Subreddit">
     </item>
 
@@ -26,13 +25,13 @@
 
     <item
         android:id="@+id/action_logout"
-        android:showAsAction="ifRoom"
+        app:showAsAction="never"
         android:title="@string/action_logout">
     </item>
 
     <item
         android:id="@+id/action_login"
-        android:showAsAction="ifRoom"
+        app:showAsAction="never"
         android:title="@string/action_login">
     </item>
 

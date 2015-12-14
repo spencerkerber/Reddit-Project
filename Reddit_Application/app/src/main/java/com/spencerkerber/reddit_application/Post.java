@@ -28,6 +28,18 @@ public class Post {
     }
 
     String getScore(){
+
         return Integer.toString(points);
+    }
+
+    String getPermalink() {
+        return permalink;}
+
+    String getUrl(){
+        return url;
+    }
+
+    String getDomain(){
+        return domain;
     }
 }

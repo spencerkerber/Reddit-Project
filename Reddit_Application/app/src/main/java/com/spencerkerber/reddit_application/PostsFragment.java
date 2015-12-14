@@ -5,12 +5,15 @@ package com.spencerkerber.reddit_application;
  */
 import java.util.ArrayList;
 import java.util.List;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -19,8 +22,9 @@ import android.widget.TextView;
  * While this looks like a lot of code, all this class
  * actually does is load the posts in to the listview.
  */
-public class PostsFragment extends Fragment{
+public class PostsFragment extends Fragment {
 
+    private OnPostClick onPostClick;
     ListView postsList;
     ArrayAdapter<Post> adapter;
     Handler handler;
@@ -29,7 +33,7 @@ public class PostsFragment extends Fragment{
     List<Post> posts;
     PostsHolder postsHolder;
 
-    PostsFragment(){
+    public PostsFragment(){
         handler=new Handler();
         posts=new ArrayList<Post>();
     }
@@ -49,6 +53,13 @@ public class PostsFragment extends Fragment{
                 , container
                 , false);
         postsList=(ListView)v.findViewById(R.id.posts_list);
+
+        postsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                onPostClick.PostClicked(position, posts.get(position).getUrl());
+            }
+        });
         return v;
     }
 
@@ -136,6 +147,16 @@ public class PostsFragment extends Fragment{
             }
         };
         postsList.setAdapter(adapter);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        onPostClick = (OnPostClick) context;
+    }
+
+    public interface OnPostClick {
+        public void PostClicked(int postPosition, String url);
     }
 
 }
